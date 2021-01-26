@@ -1,0 +1,29 @@
+<div class="mat-elevation-z2 table-responsive p-3 mt-5">
+  <div class="d-flex mb-2">
+    <span class="space-right"></span>
+    <button mat-flat-button color="primary" [routerLink]="['fill']" routerLinkActive="router-link-active">Fill Card Details</button>
+  </div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Card No.</td>
+        <td>Expiry Date</td>
+        <td>Secuirity Code</td>
+        <td>Amount</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="(details | async).length === 0">
+        <td colspan="5">No record found</td>
+      </tr>
+      <tr *ngFor="let detail of details | async">
+        <td>{{detail.cardHolder}}</td>
+        <td>{{detail.cardNumber}}</td>
+        <td>{{detail.expirationDate}}</td>
+        <td>{{detail.secuirityCode}}</td>
+        <td>$ {{detail.amount}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

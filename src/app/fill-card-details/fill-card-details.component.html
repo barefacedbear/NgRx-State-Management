@@ -1,0 +1,56 @@
+<div class="login-box">
+  <div class="flex justify-content-spaceBetween align-items-center login-wrapper">
+    <div class="column block flex justify-content-center align-items-center">
+      <h1>Fill Card Detils</h1>
+      <form class="login-form" [formGroup]="cardDetails" (submit)="submitDetails()">
+        <div class="row">
+          <div class="col-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Card Holder Name</mat-label>
+              <input matInput formControlName="cardHolder">
+              <mat-error>Name Required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Credit Card Number</mat-label>
+              <input matInput formControlName="cardNumber" placeholder="XXXX XXXX XXXX XXXX" (keyup)="keyupcard()">
+              <mat-error>Card Number Required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <mat-form-field appearance="outline">
+              <mat-label>Expiration Date</mat-label>
+              <input matInput formControlName="expirationDate" placeholder="MM/YYYY" (keyup)="expiryDate()">
+              <mat-error *ngIf="cardDetails.get('expirationDate').errors?.required">Expiration Date Required</mat-error>
+              <mat-error *ngIf="cardDetails.get('expirationDate').errors?.expiryDate">Invalid date</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-4">
+            <mat-form-field appearance="outline">
+              <mat-label>CVV</mat-label>
+              <input matInput type="password" formControlName="secuirityCode" maxlength="3">
+              <mat-error>Invalid CVV</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-4">
+            <mat-form-field appearance="outline">
+              <span matPrefix><b>$</b>&nbsp;</span>
+              <mat-label>Amount</mat-label>
+              <input matInput formControlName="amount">
+              <mat-error *ngIf="cardDetails.get('amount').errors?.required">Amount Required</mat-error>
+              <mat-error *ngIf="cardDetails.get('amount').errors?.aboveZero">Amount can't be 0</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button mat-raised-button color="primary" type="submit" class="input-btn" [disabled]="cardDetails.invalid">Add Detail</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

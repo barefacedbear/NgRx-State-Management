@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.space-right {
+  flex: 1 1 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-spaceBetween {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.login-wrapper {
+  height: 100%;
+}
+
+.block {
+  flex: 1;
+  margin: 0 5px;
+  height: inherit;
+}
+
+.login-box {
+  margin: 0;
+  position: absolute;
+  height: 400px;
+  width: 700px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem 0 rgba(44, 51, 73, .3);
+}
+
+.login-box img {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.login-form h1 {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-form table tr td {
+  padding: 5px 0;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+.mat-form-field-flex>.mat-form-field-infix {
+  padding: 0.4em 0px !important;
+}
+
+.mat-form-field-label-wrapper {
+  top: -1.5em;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.1em) scale(.75);
+  width: 133.33333%;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: white;
+  border-radius: 5px;
+}
